@@ -1,6 +1,6 @@
 <div>
     <li>
         {{ $post->title }}
-        <button wire:click="removePost({{ $post->id }})">Delete</button>
+        <button wire:click="removePost">Delete</button>
     </li>
 </div>

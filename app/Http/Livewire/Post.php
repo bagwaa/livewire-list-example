@@ -14,9 +14,10 @@ class Post extends Component
         $this->post = $post;
     }
 
-    public function removePost($id)
+    public function removePost()
     {
-        $this->emit('removePost', $id);
+        $this->post->delete();
+        $this->emit('removePost', $this->post->id);
     }
 
     public function render()
