@@ -1,5 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
-    <livewire:listing />
+    <div>
+        <div>
+            <livewire:listing />
+        </div>
+    </div>
 @endsection
