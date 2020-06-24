@@ -7,22 +7,15 @@ use Livewire\Component;
 
 class Listing extends Component
 {
-    public $posts;
-
-    protected $listeners = ['postWasDeleted'];
-
-    public function mount()
+    public function removePost($id)
     {
-        $this->posts = Post::all();
-    }
-
-    public function postWasDeleted($id)
-    {
-        /* dd("post ${id} was deleted"); */
+        Post::find($id)->delete();
     }
 
     public function render()
     {
-        return view('livewire.listing');
+        return view('livewire.listing', [
+            'posts' => Post::all()->sortBy('title')
+        ]);
     }
 }

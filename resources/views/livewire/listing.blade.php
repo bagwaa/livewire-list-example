@@ -1,7 +1,10 @@
 <div>
-    <ul>
+    <ul> 
         @foreach($posts as $post)
-            <livewire:post :post="$post" wire:key="{{ $loop->index }}" />
+            <li wire:key="{{ $post->id }}">
+                {{ $post->title }}
+                <button wire:click="removePost({{ $post->id }})">Delete</button>
+            </li>
         @endforeach
     <ul>
 </div>
